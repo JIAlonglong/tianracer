@@ -5,11 +5,11 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /RobotModel1/Links1/base_footprint1
-        # - /RobotModel2/Links2/base_footprint2
+        - /Local Plan1
+        - /Global Plan1
         - /Pose Array1
       Splitter Ratio: 0.6526610255241394
-    Tree Height: 787
+    Tree Height: 214
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -132,75 +132,75 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_footprint:
+        tianracer/base_footprint:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        base_inertia:
+        tianracer/base_inertia:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera:
+        tianracer/base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        imu:
+        tianracer/camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        laser:
+        tianracer/imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_front_wheel:
+        tianracer/laser:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_rear_wheel:
+        tianracer/left_front_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_steering_hinge:
+        tianracer/left_rear_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        real_sense:
+        tianracer/left_steering_hinge:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        realsense_depth:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        right_front_wheel:
+        tianracer/real_sense:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_rear_wheel:
+        tianracer/realsense_depth:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        tianracer/right_front_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_steering_hinge:
+        tianracer/right_rear_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tianracer/right_steering_hinge:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
       Name: RobotModel
-      Robot Description: tianracer/robot_description # must be same with robot_description
+      Robot Description: tianracer/robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
@@ -236,7 +236,7 @@ Visualization Manager:
       Radius: 0.029999999329447746
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
-      Topic: /tianracer/move_base/TebLocalPlannerROS/local_plan
+      Topic: /tianracer/move_base/GlobalPlanner/plan
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -260,7 +260,7 @@ Visualization Manager:
       Radius: 0.029999999329447746
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
-      Topic: /tianracer/move_base/TebLocalPlannerROS/global_plan
+      Topic: /tianracer/move_base/GlobalPlanner/plan
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -374,7 +374,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -6.300016403198242
+      Angle: -6.235015392303467
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -384,18 +384,18 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 50
+      Scale: 124.5903091430664
       Target Frame: <Fixed Frame>
-      X: -3.417113780975342
-      Y: -0.8390389680862427
+      X: 1.1380153894424438
+      Y: 0.10940684378147125
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1016
+  Height: 854
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a0000039efc0200000005fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000198000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000039e000000c900ffffff000000010000010f0000039efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d0000039e000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a00000041800fffffffb0000000800540069006d00650100000000000004500000000000000000000006100000039e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000311000002fcfc0200000005fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000001e0054006f006f006c002000500072006f0070006500720074006900650073010000003d000001950000005c00fffffffb000000100044006900730070006c00610079007301000001d800000161000000c900ffffff000000010000010f0000039efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d0000039e000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004a00000003efc0100000002fb0000000800540069006d00650000000000000004a00000041800fffffffb0000000800540069006d006501000000000000045000000000000000000000041f000002fc00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -404,6 +404,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1920
-  X: 0
+  Width: 1846
+  X: 72
   Y: 27

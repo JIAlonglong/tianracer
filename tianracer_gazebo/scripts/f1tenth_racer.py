@@ -72,7 +72,7 @@ class RaceStateMachine(object):
         finished = False
         while not rospy.is_shutdown() and not finished:
             finished = self.move_to_next()
-            rospy.sleep(2.0)
+            rospy.sleep(0.001)
 
 if __name__ == '__main__':
     rospy.init_node('race')

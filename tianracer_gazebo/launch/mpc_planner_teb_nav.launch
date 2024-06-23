@@ -24,15 +24,9 @@
         </include>
 
         <!-- move base -->
-        <!-- <include file="$(find tianracer_gazebo)/launch/includes/wpbh_local_planner.launch.xml" > -->
-        <include file="$(find tianracer_gazebo)/launch/includes/teb_base.launch.xml" >
+        <include file="$(find tianracer_gazebo)/launch/includes/mpc_planner.launch.xml" >
             <arg name="robot_name" value="$(arg namespace)" />
         </include>
-        <!-- <node name="tianracer_gazebo" pkg="tianracer_gazebo" type="sxt.py" output="screen"/> -->
-        <!-- <node name="tianracer_gazebo" pkg="tianracer_gazebo" type="wall_following.py" output="screen"/> -->
-        <!-- we use pure_pursuit -->
-        <!-- <include file="$(find pure_pursuit)/launch/pure_pursuit_test.launch">
-        </include> -->
 
         <!-- AMCL -->
         <include file="$(find tianracer_gazebo)/launch/includes/amcl.launch.xml" >
@@ -63,15 +57,10 @@
             <arg name="robot_name" value="$(arg robot_name)" />
         </include>
 
-        <!-- <include file="$(find tianracer_gazebo)/launch/includes/wpbh_local_planner.launch.xml" > -->
+        <!-- move base -->
         <include file="$(find tianracer_gazebo)/launch/includes/teb_base.launch.xml" >
             <arg name="robot_name" value="$(arg robot_name)" />
         </include>
-        <!-- <node name="tianracer_gazebo" pkg="tianracer_gazebo" type="sxt.py" output="screen"/> -->
-        <!-- <node name="tianracer_gazebo" pkg="tianracer_gazebo" type="wall_following.py" output="screen"/> -->
-        <!-- <include file="$(find pure_pursuit)/launch/pure_pursuit_test.launch">
-        </include> -->
-
 
         <!-- AMCL -->
         <include file="$(find tianracer_gazebo)/launch/includes/amcl.launch.xml" >

@@ -4,7 +4,8 @@ global_costmap:
   transform_tolerance: 0.5
 
   update_frequency: 15.0
-  publish_frequency: 10.0
+  publish_frequency: 15.0
+  transform_tolerance: 5.0
 
   plugins:
     - {name: static_layer,    type: "costmap_2d::StaticLayer"}
@@ -17,3 +18,23 @@ global_costmap:
     cost_scaling_factor:  10.0  # exponential rate at which the obstacle cost drops off (default: 10)
     inflation_radius:     0.85  # max. distance from an obstacle at which costs are incurred for planning paths.
 
+  recovery_behaviors:
+    - name: 'conservative_reset'
+      type: 'clear_costmap_recovery/ClearCostmapRecovery'
+    - name: 'rotate_recovery'
+      type: 'rotate_recovery/RotateRecovery'
+    - name: 'aggressive_reset'
+      type: 'clear_costmap_recovery/ClearCostmapRecovery'
+    - name: 'reset_recovery'
+      type: 'clear_costmap_recovery/ClearCostmapRecovery'
+
+  conservative_reset:
+    reset_distance: 2.0
+    layer_names: ["obstacle_layer"]
+
+  aggressive_reset:
+    reset_distance: 0.0
+    layer_names: ["obstacle_layer"]
+  reset_recovery :
+    reset_distance: 1.84
+    layer_names: ["obstacle_layer"]

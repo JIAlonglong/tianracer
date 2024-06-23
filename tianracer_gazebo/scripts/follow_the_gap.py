@@ -20,6 +20,17 @@ todo
 2. avoide the U-turn to the back
 """
 
+#wall follow 
+# class WallFollow:
+#     def __init__(self) -> None:
+#         global prev_time
+#         lidarscan_topic='/scan'
+#         drive_topic='/nav'
+
+
+
+
+        
 def display_direction(scale, tail, tip, idnum):
     """
     generate arrow makers
@@ -166,7 +177,7 @@ def follow_the_gap_callback(data):
     
     dis_ml = Float64MultiArray(data=dis_list)
     frame_pub.publish(dis_ml)
-    speed = 1.7
+    speed = 3
     length = 1  
     gap_angle = target_angle / 180 * 3.14
     ref_yaw = gyaw + gap_angle
@@ -189,7 +200,7 @@ if __name__ == '__main__':
     round_pub = rospy.Publisher("round_show", Marker, queue_size=10)
     scale = Vector3(0.05,0.2,0.2)
     pose_sub = rospy.Subscriber('amcl_pose', PoseWithCovarianceStamped, get_pose)
-    scan_sub = rospy.Subscriber('scan', LaserScan, follow_the_gap_callback)
+    scan_sub = rospy.Subscriber('scan', LaserScan, follow_the_gap_callback)#laser scan
     drive_pub = rospy.Publisher('ackermann_cmd_stamped', AckermannDriveStamped, queue_size=1)
     frame_pub = rospy.Publisher('image', Float64MultiArray,queue_size=150)
     rospy.spin()

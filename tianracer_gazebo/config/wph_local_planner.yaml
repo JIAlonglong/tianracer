@@ -1,0 +1,10 @@
+WpbhLocalPlanner:
+  max_vel_trans: 0.0
+  max_vel_rot: 0.0
+  # acc x ,y
+  acc_scale_trans: 0.0
+  # acc z
+  acc_scale_rot: 0.0
+  goal_dist_tolerance: 0.1
+  goal_yaw_tolerance: 0.1
+  scan_topic: /tianracer/scan

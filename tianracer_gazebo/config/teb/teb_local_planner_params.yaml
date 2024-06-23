@@ -34,18 +34,18 @@ TebLocalPlannerROS:
   publish_feedback: False
 
   # Robot
-  max_vel_x: 1.8
-  max_vel_x_backwards: 1
-  max_vel_theta: 3.6
-  acc_lim_x: 1.8
-  acc_lim_theta: 3.6
+  max_vel_x: 3.0
+  max_vel_x_backwards: 0.5
+  max_vel_theta: 6.28
+  acc_lim_x: 3.0
+  acc_lim_theta: 6.28
 
   #仅适用于全向轮
   # max_vel_y (double, default: 0.0)
   # acc_lim_y (double, default: 0.5)
 
   # ********************** Carlike robot parameters ********************
-  min_turning_radius: 0.5 # 最小转弯半径 注意车辆运动学中心是后轮中点
+  min_turning_radius: 0.3 # 最小转弯半径 注意车辆运动学中心是后轮中点
   wheelbase: 0.26 # 即前后轮距离
 
   #设置为true时，ROS话题（rostopic） cmd_vel/angular/z 内的数据是舵机角度，
@@ -68,8 +68,8 @@ TebLocalPlannerROS:
     type: "polygon"
     vertices: [[0.18, 0.10], [0.18, -0.10], [-0.18, -0.10], [-0.18, 0.10]]
 
-  xy_goal_tolerance: 0.1
-  yaw_goal_tolerance: 0.1
+  xy_goal_tolerance: 1.0
+  yaw_goal_tolerance: 1.0
   #自由目标速度。设为False时，车辆到达终点时的目标速度为0。
   #TEB是时间最优规划器。缺少目标速度约束将导致车辆“全速冲线”
   free_goal_vel: True
@@ -77,7 +77,7 @@ TebLocalPlannerROS:
   # complete_global_plan: True
   # Obstacles
 
-  min_obstacle_dist: 0.2 # 与障碍的最小期望距离,
+  min_obstacle_dist: 0.1 # 与障碍的最小期望距离,
   include_costmap_obstacles: True #应否考虑到局部costmap的障碍设置为True后才能规避实时探测到的、建图时不存在的障碍物。
   costmap_obstacles_behind_robot_dist: 2.0 #考虑后面n米内的障碍物2.0
   obstacle_poses_affected: 30 #为了保持距离，每个障碍物位置都与轨道上最近的位置相连。
